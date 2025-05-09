@@ -1,10 +1,11 @@
-import { Button } from "@/components/ui/button";
+import ProductList from "@/components/shared/product/product-list";
+import sampleData from "@/db/sample-data";
+// import { Button } from "@/components/ui/button";
 
 const HomePage = () => {
   return (
     <>
-      Latest Products
-      <Button>Button</Button>
+      <ProductList data={sampleData.products} title="New Arrivals"/>
     </>
   );
 };
