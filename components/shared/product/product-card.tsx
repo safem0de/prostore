@@ -31,13 +31,14 @@ const ProductCard = ({ product }: { product: Product; }) => {
                 <Link href={`/product/${product.slug}`}>
                     <h2 className="text-sm font-medium">{product.name}</h2>
                 </Link>
-                <div className="flex-between gap-4">
-                    <p>{product.rating} Stars</p>
+                <div className="flex items-center justify-between gap-4">
+                    <p className="text-sm text-muted-foreground">{product.rating} Stars</p>
                     {product.stock > 0 ? (
-                        <p className="font-bold">
-                            {product.price}
-                        </p>) : (
-                        <p className="text-destructive">
+                        <p className="text-sm font-semibold text-primary">
+                            ${product.price.toFixed(2)}
+                        </p>
+                    ) : (
+                        <p className="text-sm text-destructive font-semibold">
                             Out Of Stock
                         </p>
                     )}
