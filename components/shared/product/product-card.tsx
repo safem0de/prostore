@@ -2,7 +2,18 @@ import Image from "next/image";
 import Link from "next/link";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 
-const ProductCard = ({ product }: { product: any; }) => {
+interface Product {
+    id: string;
+    name: string;
+    slug: string;
+    brand: string;
+    price: number;
+    rating: number;
+    stock: number;
+    images: string[];
+}
+
+const ProductCard = ({ product }: { product: Product; }) => {
     return (
         <Card className="w-full max-w-sm">
             <CardHeader>
@@ -32,7 +43,8 @@ const ProductCard = ({ product }: { product: any; }) => {
                     )}
                 </div>
             </CardContent>
-        </Card>);
+        </Card>
+    );
 }
 
 export default ProductCard;
