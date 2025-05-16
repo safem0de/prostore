@@ -1,17 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
-
-interface Product {
-    id: string;
-    name: string;
-    slug: string;
-    brand: string;
-    price: number;
-    rating: number;
-    stock: number;
-    images: string[];
-}
+import { Product } from "@/types";
 
 const ProductCard = ({ product }: { product: Product; }) => {
     return (
@@ -35,7 +25,7 @@ const ProductCard = ({ product }: { product: Product; }) => {
                     <p className="text-sm text-muted-foreground">{product.rating} Stars</p>
                     {product.stock > 0 ? (
                         <p className="text-sm font-semibold text-primary">
-                            ${product.price.toFixed(2)}
+                            ${product.price}
                         </p>
                     ) : (
                         <p className="text-sm text-destructive font-semibold">
